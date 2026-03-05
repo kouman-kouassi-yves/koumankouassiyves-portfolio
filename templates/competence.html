@@ -1,0 +1,144 @@
+
+{% extends "base.html" %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/skills.css') }}">
+{% endblock %}
+
+{% block title %}Compétences{% endblock %}
+
+{% block content %}
+<section id="skills">
+
+    <div class="eyebrow">Compétences</div>
+    <h2>Mon expertise</h2>
+    <p>Un aperçu des technologies que je maîtrise et des outils avec lesquels je travaille au quotidien.</p>
+
+    <div class="skills-categories">
+
+        <!-- ── Front-end ── -->
+        <div class="skill-category">
+            <div class="category-label">
+                <span class="cat-num">01 /</span>
+                <h3>Front-end</h3>
+                <p>Interfaces visuelles et expériences utilisateur</p>
+            </div>
+            <ul class="skills-list">
+                <li class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">HTML5 / CSS3</span>
+                        <span class="skill-level">Avancé</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width:90%; --delay:0.1s"></div>
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">JavaScript (ES6+)</span>
+                        <span class="skill-level">Intermédiaire</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width:70%; --delay:0.2s"></div>
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">React</span>
+                        <span class="skill-level">Intermédiaire</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width:65%; --delay:0.3s"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ── Back-end ── -->
+        <div class="skill-category">
+            <div class="category-label">
+                <span class="cat-num">02 /</span>
+                <h3>Back-end</h3>
+                <p>Logique serveur et gestion des données</p>
+            </div>
+            <ul class="skills-list">
+                <li class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">PHP</span>
+                        <span class="skill-level">Intermédiaire</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width:60%; --delay:0.1s"></div>
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Node.js</span>
+                        <span class="skill-level">Débutant · Avancé</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width:50%; --delay:0.2s"></div>
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">MySQL</span>
+                        <span class="skill-level">Intermédiaire</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width:65%; --delay:0.3s"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ── Autres ── -->
+        <div class="skill-category">
+            <div class="category-label">
+                <span class="cat-num">03 /</span>
+                <h3>Autres</h3>
+                <p>Langages et environnements complémentaires</p>
+            </div>
+            <ul class="skills-list">
+                <li class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Java (Swing)</span>
+                        <span class="skill-level">Intermédiaire</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width:60%; --delay:0.1s"></div>
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Gestion de projet</span>
+                        <span class="skill-level">Intermédiaire</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width:68%; --delay:0.2s"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Outils & environnements -->
+    <div class="tools-section">
+        <h3>Outils &amp; environnements</h3>
+        <ul class="tools-cloud">
+            <li>VS Code</li>
+            <li>Git / GitHub</li>
+            <li>Flask</li>
+            <li>Figma</li>
+            <li>Linux</li>
+            <li>Responsive Design</li>
+            <li>REST API</li>
+            <li>npm</li>
+            <li>Chrome DevTools</li>
+            <li>Postman</li>
+        </ul>
+    </div>
+
+</section>
+{% endblock %}

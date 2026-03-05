@@ -1,0 +1,40 @@
+
+
+  {% extends "base.html" %}
+
+  {% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
+  {% endblock %}
+
+{% block title %}Projets{% endblock %}
+
+  {% block content %}
+
+    <section id="projects">
+
+
+
+        <div class="project">
+          <a href="https://factura-shop.sitep-ci.org/" target="_blank" rel="noopener noreferrer"><h3>FacturaShop</h3></a>
+        
+        <p>Une application de système de facturation développée aevc "python, flask, HTML,CSS, JavaScript et Boostrap " <br>Ce projet a été réalisé dans le cadre de mon stage dans la <b>Société Internationnale de Technoologie et d'Etude de Projet (SITEP)</b>'</p>
+      </div>
+      <div class="project">
+        <h3>Portfolio personnel</h3>
+        <p>Site web HTML/CSS/React pour présenter mes compétences.</p>
+      </div>
+      <h2>Mes projets</h2>
+      <div class="project">
+        <h3>Site de gestion scolaire</h3>
+        <p>Application Java Swing pour gérer élèves et professeurs.</p>
+      </div>
+      <div class="project">
+        <h3>Portfolio personnel</h3>
+        <p>Site web HTML/CSS/React pour présenter mes compétences.</p>
+      </div>
+
+    </section>
+
+    <script src="main.js"></script>
+  {% endblock %}
+

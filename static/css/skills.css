@@ -1,0 +1,244 @@
+/* ═══════════════════════════════
+   SKILLS.CSS — Page Compétences
+   ═══════════════════════════════ */
+
+/* Lumière décorative */
+body::after {
+    content: '';
+    position: fixed;
+    top: 10%;
+    right: -15%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── Section Compétences ── */
+section#skills {
+    position: relative;
+}
+
+section#skills::before {
+    content: '05';
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 12rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.018);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Chapeau */
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+.eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+}
+
+section#skills > p {
+    color: var(--text2);
+    max-width: 55ch;
+    margin-bottom: 4rem;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* ── Catégories ── */
+.skills-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.skill-category {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.skill-category:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Colonne gauche — label catégorie */
+.category-label {
+    position: sticky;
+    top: calc(var(--nav-h) + 2rem);
+}
+
+.category-label .cat-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: var(--text3);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.category-label h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text);
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.category-label p {
+    font-size: 0.82rem;
+    color: var(--text3);
+    margin-top: 0.6rem;
+    max-width: 18ch;
+    line-height: 1.6;
+}
+
+/* Colonne droite — grille de skills */
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+/* Chaque compétence avec barre de progression */
+.skill-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    transition: border-color var(--transition), transform var(--transition);
+    margin: 0;
+    color: var(--text);
+}
+
+.skill-item:hover {
+    border-color: rgba(201,168,76,0.25);
+    transform: translateX(4px);
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.85rem;
+}
+
+.skill-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.skill-level {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    background: var(--gold-dim);
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+}
+
+/* Barre de progression */
+.skill-bar {
+    height: 3px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 999px;
+    transform-origin: left;
+    animation: barGrow 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+    animation-delay: var(--delay, 0.2s);
+}
+
+@keyframes barGrow {
+    from { transform: scaleX(0); opacity: 0; }
+    to   { transform: scaleX(1); opacity: 1; }
+}
+
+/* ── Bloc outils / soft skills ── */
+.tools-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+}
+
+.tools-section h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text3);
+    margin: 0 0 1.5rem;
+}
+
+.tools-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0;
+    list-style: none;
+}
+
+.tools-cloud li {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--text2);
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--border2);
+    border-radius: 999px;
+    margin: 0;
+    transition: color var(--transition), border-color var(--transition), background var(--transition);
+    cursor: default;
+}
+
+.tools-cloud li:hover {
+    color: var(--gold);
+    border-color: rgba(201,168,76,0.35);
+    background: var(--gold-dim);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .skill-category {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .category-label {
+        position: static;
+    }
+    .category-label h3 { font-size: 1.15rem; }
+}

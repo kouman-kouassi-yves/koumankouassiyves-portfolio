@@ -1,0 +1,150 @@
+
+{% extends "base.html" %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/experience.css') }}">
+{% endblock %}
+
+{% block title %}Expérience{% endblock %}
+
+{% block content %}
+<section id="experience">
+
+    <div class="eyebrow">Parcours</div>
+    <h2>Expérience &amp; Formation</h2>
+    <p>Mon parcours académique et mes expériences pratiques qui ont forgé mes compétences de développeur web.</p>
+
+    <!-- Onglets -->
+    <div class="exp-tabs">
+        <button class="exp-tab active" onclick="switchTab(this, 'formation')">Formation</button>
+        <button class="exp-tab" onclick="switchTab(this, 'experience')">Expérience</button>
+    </div>
+
+    <!-- Panel : Formation -->
+    <div class="exp-panel active" id="panel-formation">
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="exp-card">
+                    <div class="exp-card-head">
+                        <h3>Formation en Développement Web</h3>
+                        <span class="exp-date">2024 — En cours</span>
+                    </div>
+                    <span class="exp-org">École / Centre de formation · Abidjan, CI</span>
+                    <p>Formation intensive couvrant les fondamentaux du développement web full-stack : HTML, CSS, JavaScript, React, Node.js, PHP et bases de données MySQL. Réalisation de projets concrets en conditions réelles.</p>
+                    <ul class="exp-tags">
+                        <li>HTML / CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="exp-card">
+                    <div class="exp-card-head">
+                        <h3>Programmation Java — Swing & POO</h3>
+                        <span class="exp-date">2023</span>
+                    </div>
+                    <span class="exp-org">Auto-formation · En ligne</span>
+                    <p>Apprentissage de la programmation orientée objet avec Java et développement d'applications de bureau avec la bibliothèque Swing. Application directe sur un projet de gestion scolaire.</p>
+                    <ul class="exp-tags">
+                        <li>Java</li>
+                        <li>Swing</li>
+                        <li>POO</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="exp-card">
+                    <div class="exp-card-head">
+                        <h3>Baccalauréat</h3>
+                        <span class="exp-date">2022</span>
+                    </div>
+                    <span class="exp-org">Lycée · Abidjan, CI</span>
+                    <p>Obtention du baccalauréat, marquant la fin du cursus secondaire et le point de départ vers une spécialisation en développement informatique.</p>
+                    <ul class="exp-tags">
+                        <li>Sciences</li>
+                        <li>Mathématiques</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Panel : Expérience -->
+    <div class="exp-panel" id="panel-experience">
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="exp-card">
+                    <div class="exp-card-head">
+                        <h3>Développeur Web — Projet Personnel</h3>
+                        <span class="exp-date">2025 — En cours</span>
+                    </div>
+                    <span class="exp-org">Portfolio · Indépendant</span>
+                    <p>Conception et développement de mon portfolio personnel avec Flask (Python) en back-end, HTML/CSS en front-end. Mise en place d'un design système cohérent, responsive et animé.</p>
+                    <ul class="exp-tags">
+                        <li>Flask</li>
+                        <li>HTML / CSS</li>
+                        <li>Design System</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="exp-card">
+                    <div class="exp-card-head">
+                        <h3>Application de Gestion Scolaire</h3>
+                        <span class="exp-date">2023 — 2024</span>
+                    </div>
+                    <span class="exp-org">Projet académique · Java Swing</span>
+                    <p>Développement d'une application desktop complète pour gérer élèves, professeurs, notes et emplois du temps. Première expérience significative sur un projet de bout en bout avec une base de données relationnelle.</p>
+                    <ul class="exp-tags">
+                        <li>Java</li>
+                        <li>Swing</li>
+                        <li>MySQL</li>
+                        <li>Architecture MVC</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="exp-card">
+                    <div class="exp-card-head">
+                        <h3>Projets Web Front-end</h3>
+                        <span class="exp-date">2024</span>
+                    </div>
+                    <span class="exp-org">Exercices de formation · Personnel</span>
+                    <p>Réalisation de plusieurs interfaces web responsives : landing pages, formulaires interactifs, composants React. Accent mis sur l'accessibilité, la compatibilité multi-navigateurs et la performance.</p>
+                    <ul class="exp-tags">
+                        <li>HTML / CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Responsive</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<script>
+function switchTab(btn, panel) {
+    // Désactiver tous les onglets et panels
+    document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
+    // Activer le bon
+    btn.classList.add('active');
+    document.getElementById('panel-' + panel).classList.add('active');
+}
+</script>
+{% endblock %}

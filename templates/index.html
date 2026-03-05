@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil{% endblock %}
+
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="home-wrapper">
+
+    <section id="home">
+
+        <img src="{{ url_for('static', filename='images/kouman.jpg') }}" alt="Photo de profil">
+
+        <span class="greeting">Disponible &amp; en formation</span>
+
+        <h2>Bonjour et bienvenue<br>sur mon portfolio,<br>je suis Kouman<br>Kouassi Yves</h2>
+
+        <p>Développeur web en formation, passionné par les applications modernes et la création de solutions utiles.<br>Explorez mes projets, compétences et expériences pour en savoir plus sur mon parcours en développement web.</p>
+
+        <a href="{{ url_for('about') }}" class="btn">Découvrir mon portfolio</a>
+
+    </section>
+
+
+    <section id="home2">
+        <div class="loader">
+            <span>Kouman</span>
+            <span>Kouassi</span>
+            <span>Yves</span>
+            <span>Informaticien</span>
+            <span>Développeur</span>
+        </div>
+    </section>
+
+</div>
+
+
+{% endblock %}

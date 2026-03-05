@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Mon Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block extra_css %}{% endblock %}
+
+</head>
+
+<body>
+
+
+
+
+<div>
+
+
+
+    <div>
+        <nav>
+
+            <div class="logo" id="logo">
+                <!-- ✅ Affiche l'image, cliquable vers l'accueil -->
+                    <a href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='images/logo_1.png') }}" alt="KOUMAN K. YVES" height="50">
+                    </a>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="{{ url_for('index') }}">
+                    <span>Accueil</span>   
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('about') }}">
+                        <span>À propos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('project') }}">
+                        <span>Projets</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('competence') }}">
+                        <span>Compétences</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('experience') }}">
+                        <span>Expérience</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('contact') }}">
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</div>
+
+
+
+
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+
+
+
+    <footer>
+        <!-- ✅ Affiche l'image, cliquable vers l'accueil -->
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/logo_1.png') }}" alt="KOUMAN K. YVES" height="50">
+        </a>
+
+        <div class="social-links">
+            <a href="https://wa.me/2250700000000" target="_blank">WhatsApp</a>
+            <a href="https://www.facebook.com/kouman.kouassi.yves" target="_blank">Facebook</a>
+            <a href="https://www.linkedin.com/in/kouman-kouassi-yves" target="_blank">LinkedIn</a>
+            <a href="https://github.com/kouman-kouassi-yves" target="_blank">GitHub</a>
+        </div>
+        <div>
+            <p>&copy; 2026 KOUMAN KOUASSI YVES - Tous droits réservés</p>
+        </div>
+    </footer>
+
+</body>
+</html>

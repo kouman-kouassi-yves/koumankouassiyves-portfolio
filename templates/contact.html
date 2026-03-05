@@ -1,0 +1,29 @@
+
+
+  {% extends "base.html" %}
+  {% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+  {% endblock %}
+
+  {% block content %}
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email : <a href="mailto:yveskouassikouman@gmail.com">yveskouassikouman@gmail.com</a></p>
+        <p>Télécharger mon CV : <a href="https://drive.google.com/file/d/19gDHm-xMW-NJ3ewHZr3R8abLiO8Tgocl/view?usp=sharing" download>Mon CV</a></p>
+
+        <h3>Formulaire de visite</h3>
+
+        
+        <form action="https://mail.google.com/mail/u/0/#inbox" method="post">
+          <input type="text" name="name" placeholder="Nom" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" placeholder="Message" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </section>
+
+
+      <script src="main.js"></script>
+
+  {% endblock %}
+
