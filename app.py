@@ -16,6 +16,8 @@ app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', '')   # voir READM
 app.config['MAIL_DEFAULT_SENDER'] = 'yveskouassikouman@gmail.com'
 
 mail = Mail(app)
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 
 @app.route("/")
