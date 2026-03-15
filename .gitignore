@@ -136,3 +136,24 @@ instance/
 # OS
 .DS_Store
 Thumbs.db
+.env/
+# Environnement virtuel
+venv/
+env/
+
+# Variables d'environnement (NE JAMAIS PUSHER !)
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
