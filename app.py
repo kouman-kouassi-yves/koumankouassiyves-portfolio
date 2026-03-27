@@ -69,6 +69,8 @@ def submit_contact():
 
     return redirect(url_for("contact"))
 
+print("MAIL_PASSWORD chargé :", bool(os.environ.get('MAIL_PASSWORD')))
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html"), 404
