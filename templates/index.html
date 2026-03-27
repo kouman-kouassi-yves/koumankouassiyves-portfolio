@@ -2,20 +2,16 @@
 
 {% block title %}Accueil{% endblock %}
 
-
 {% block extra_css %}
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 {% endblock %}
 
-
 {% block content %}
-
-
 <div class="home-wrapper">
 
     <section id="home">
 
-        <img src="{{ url_for('static', filename='images/kouman.jpg') }}" alt="Photo de profil">
+        <img src="{{ url_for('static', filename='images/kouman.jpg') }}" alt="Photo de profil de Kouman Kouassi Yves">
 
         <span class="greeting">Disponible &amp; en formation</span>
 
@@ -27,18 +23,14 @@
 
     </section>
 
-
     <section id="home2">
         <div class="loader">
             <span>Kouman</span>
             <span>Kouassi</span>
             <span>Yves</span>
-            <span>Informaticien</span>
             <span>Développeur</span>
         </div>
     </section>
 
 </div>
-
-
 {% endblock %}

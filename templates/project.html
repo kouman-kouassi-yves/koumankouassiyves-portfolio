@@ -1,40 +1,39 @@
+{% extends "base.html" %}
 
+{% block title %}Mes Projets{% endblock %}
 
-  {% extends "base.html" %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
+{% endblock %}
 
-  {% block extra_css %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
-  {% endblock %}
+{% block content %}
+<section id="projects">
 
-{% block title %}Projets{% endblock %}
+    <h2>Mes projets</h2>
+    <p>Quelques réalisations concrètes développées dans le cadre de ma formation et de mes expériences personnelles.</p>
 
-  {% block content %}
-
-    <section id="projects">
-
-
+    <div class="projects-grid">
 
         <div class="project">
-          <a href="https://factura-shop.sitep-ci.org/" target="_blank" rel="noopener noreferrer"><h3>FacturaShop</h3></a>
-        
-        <p>Une application de système de facturation développée aevc "python, flask, HTML,CSS, JavaScript et Boostrap " <br>Ce projet a été réalisé dans le cadre de mon stage dans la <b>Société Internationnale de Technoologie et d'Etude de Projet (SITEP)</b>'</p>
-      </div>
-      <div class="project">
-        <h3>Portfolio personnel</h3>
-        <p>Site web HTML/CSS/React pour présenter mes compétences.</p>
-      </div>
-      <h2>Mes projets</h2>
-      <div class="project">
-        <h3>Site de gestion scolaire</h3>
-        <p>Application Java Swing pour gérer élèves et professeurs.</p>
-      </div>
-      <div class="project">
-        <h3>Portfolio personnel</h3>
-        <p>Site web HTML/CSS/React pour présenter mes compétences.</p>
-      </div>
+            <span class="tag">Python · Flask · Bootstrap</span>
+            <h3><a href="https://factura-shop.sitep-ci.org/" target="_blank" rel="noopener noreferrer">FacturaShop</a></h3>
+            <p>Application de système de facturation développée avec Python, Flask, HTML, CSS, JavaScript et Bootstrap. Réalisée dans le cadre de mon stage à la <strong>Société Internationale de Technologie et d'Étude de Projet (SITEP)</strong>.</p>
+        </div>
 
-    </section>
+        <div class="project">
+            <span class="tag">Flask · HTML · CSS · Python</span>
+            <h3>Portfolio personnel</h3>
+            <p>Ce site web — conçu et développé avec Flask en back-end et un design system CSS sur mesure. Déployé sur Render avec envoi d'e-mails via Flask-Mail.</p>
+            <a class="project-link" href="https://github.com/kouman-kouassi-yves" target="_blank" rel="noopener noreferrer">Voir sur GitHub →</a>
+        </div>
 
-    <script src="main.js"></script>
-  {% endblock %}
+        <div class="project">
+            <span class="tag">Java · Swing · MySQL</span>
+            <h3>Application de gestion scolaire</h3>
+            <p>Application desktop complète pour gérer élèves, professeurs, notes et emplois du temps. Architecture MVC avec base de données MySQL. Premier projet de bout en bout significatif.</p>
+        </div>
 
+    </div>
+
+</section>
+{% endblock %}

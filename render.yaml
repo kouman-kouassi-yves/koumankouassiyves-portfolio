@@ -3,7 +3,11 @@ services:
     name: koumankouassiyves-portfolio
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn run:app
+    startCommand: gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.0
+        value: "3.11.0"
+      - key: SECRET_KEY
+        sync: false          # À définir dans le dashboard Render → Environment → Secret Files
+      - key: MAIL_PASSWORD
+        sync: false          # À définir dans le dashboard Render → Environment → Secret Files

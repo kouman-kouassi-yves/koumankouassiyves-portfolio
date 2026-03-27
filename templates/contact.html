@@ -1,36 +1,56 @@
 {% extends "base.html" %}
 
+{% block title %}Contact{% endblock %}
+
 {% block extra_css %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
 {% endblock %}
 
 {% block content %}
-    <section id="contact">
-        <h2>Contact</h2>
-        
-        <!-- Messages flash -->
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="form-message {{ category }}">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-        
-        <p>Email : <br><a href="mailto:yveskouassikouman@gmail.com">yveskouassikouman@gmail.com</a></p><br>
-        <p>Téléphone : <br>
-          <a href="tel:+22505946001303">+225 05 94 60 13 03</a> <br>
-          <a href="tel:+22507053680009">+225 07 05 36 80 09</a><br>
-        </p><br>
-        <p>Télécharger mon CV : <a href="https://drive.google.com/file/d/19gDHm-xMW-NJ3ewHZr3R8abLiO8Tgocl/view?usp=sharing" download>Mon CV</a></p>
-<hr>
-        <h3>Formulaire de contact</h3>
+<section id="contact">
+    <h2>Contact</h2>
 
-        <form action="{{ url_for('submit_contact') }}" method="post">
-            <input type="text" name="name" placeholder="Nom" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="message" placeholder="Message" required></textarea>
-            <button type="submit">Envoyer</button>
-        </form>
-    </section>
+    <!-- Messages flash -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        <div class="form-message {{ category }}" role="alert">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <p>Email :<br>
+        <a href="mailto:yveskouassikouman@gmail.com">yveskouassikouman@gmail.com</a>
+    </p>
+
+    <p>Téléphone :<br>
+        <a href="tel:+2250594601303">+225 05 94 60 13 03</a><br>
+        <a href="tel:+2250705368009">+225 07 05 36 80 09</a>
+    </p>
+
+    <p>
+        <strong>Curriculum vitae :</strong><br>
+        <a href="https://drive.google.com/file/d/19gDHm-xMW-NJ3ewHZr3R8abLiO8Tgocl/view?usp=sharing"
+           target="_blank" rel="noopener noreferrer">
+            Voir mon CV (Google Drive)
+        </a>
+    </p>
+
+    <hr>
+
+    <h3>Formulaire de contact</h3>
+
+    <form action="{{ url_for('submit_contact') }}" method="post" novalidate>
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom" required autocomplete="name">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="votre@email.com" required autocomplete="email">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Votre message..." required rows="5"></textarea>
+
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
 {% endblock %}

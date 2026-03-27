@@ -1,32 +1,25 @@
+{% extends "base.html" %}
 
+{% block title %}À propos de moi{% endblock %}
 
-    {% extends "base.html" %}
-        {% block title %}{% endblock %}
-    {% block extra_css %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
-    {% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
 
-    
-    {% block content %}
-        <section id="about">
-            <h2>À propos de moi</h2>
-            <p>
-                Développeur web en formation, je maîtrise HTML, CSS, JavaScript et React. J’aime transformer des idées en applications web innovantes, en mettant l’accent sur le design élégant, la navigation fluide et la compatibilité multi-plateformes. Mon objectif est de créer des solutions fonctionnelles, esthétiques et professionnelles.
-                Passionné par l’évolution constante du web, je suis toujours à l’affût des dernieres tendances en développement et design pour offrir des solutions modernes, efficaces et attractives.
-            </p>
-            
-            <h3>Compétences</h3>
-            <ul>
-                <li>HTML / CSS / JavaScript</li>
-                <li>React / Node.js</li>
-                <li>PHP / MySQL</li>
-                <li>Gestion de projets</li>
-            </ul>
-        </section>
+{% block content %}
+<section id="about">
+    <h2>À propos de moi</h2>
+    <p>
+        Développeur web en formation, je maîtrise HTML, CSS, JavaScript et React. J'aime transformer des idées en applications web innovantes, en mettant l'accent sur le design élégant, la navigation fluide et la compatibilité multi-plateformes. Mon objectif est de créer des solutions fonctionnelles, esthétiques et professionnelles.
+        Passionné par l'évolution constante du web, je suis toujours à l'affût des dernières tendances en développement et design pour offrir des solutions modernes, efficaces et attractives.
+    </p>
 
-
-        <script src="main.js"></script>
-
-    {% endblock %}
-
-
+    <h3>Compétences</h3>
+    <ul>
+        <li>HTML / CSS / JavaScript</li>
+        <li>React / Node.js</li>
+        <li>PHP / MySQL</li>
+        <li>Gestion de projets</li>
+    </ul>
+</section>
+{% endblock %}

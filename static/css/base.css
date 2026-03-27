@@ -1,12 +1,13 @@
 /* ── Google Fonts ── */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Nunito:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap');
 
 /* ── Variables ── */
 
 :root {
     --bg: #f7f5f0;
     --surface: #ffffff;
+    --surface2: rgba(0, 0, 0, 0.03);
     --border: rgba(60, 50, 30, 0.1);
     --border2: rgba(60, 50, 30, 0.15);
     --accent: #3d52d5;
@@ -16,6 +17,11 @@
     --text: #1a1814;
     --text2: #4a4438;
     --text3: #7a7060;
+    --muted: #7a7060;
+    /* Palette dorée pour les pages Compétences et Expérience */
+    --gold: #C9A84C;
+    --gold-dim: rgba(201, 168, 76, 0.08);
+    --gold-light: #E0C170;
     --nav-h: 70px;
     --radius: 20px;
     --transition: 0.25s ease;
@@ -38,7 +44,6 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    /* Base font size */
 }
 
 body {
@@ -66,7 +71,7 @@ body::before {
 }
 
 
-/* ── Navigation améliorée pour mobile ── */
+/* ── Navigation ── */
 
 nav {
     position: fixed;
@@ -165,7 +170,7 @@ main {
 }
 
 
-/* ── Typographie responsive ── */
+/* ── Typographie ── */
 
 h1,
 h2 {
@@ -198,7 +203,7 @@ p {
 }
 
 
-/* ── Footer responsive ── */
+/* ── Footer ── */
 
 footer {
     border-top: 1px solid var(--border);
@@ -246,13 +251,10 @@ footer p {
 }
 
 
-/* ── Media Queries améliorées ── */
-
-
-/* Tablettes et petits laptops */
+/* ── Media Queries ── */
 
 @media (max-width: 1024px) {
-     :root {
+    :root {
         --container-padding: 2rem;
         --section-margin: 4rem;
     }
@@ -262,11 +264,8 @@ footer p {
     }
 }
 
-
-/* Mobiles et tablettes en portrait */
-
 @media (max-width: 768px) {
-     :root {
+    :root {
         --container-padding: 1.5rem;
         --section-margin: 3rem;
         --nav-h: 60px;
@@ -295,15 +294,11 @@ footer p {
     }
 }
 
-
-/* Très petits mobiles (<= 480px) */
-
 @media (max-width: 480px) {
-     :root {
+    :root {
         --container-padding: 1rem;
         --section-margin: 2.5rem;
     }
-    /* Activer le menu hamburger */
     .menu-toggle {
         display: flex;
     }
@@ -337,7 +332,6 @@ footer p {
         text-align: center;
         white-space: normal;
     }
-    /* Animation du menu hamburger */
     .menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -362,11 +356,8 @@ footer p {
     }
 }
 
-
-/* Très petits écrans (<= 360px) */
-
 @media (max-width: 360px) {
-     :root {
+    :root {
         --container-padding: 0.75rem;
     }
     .logo img {

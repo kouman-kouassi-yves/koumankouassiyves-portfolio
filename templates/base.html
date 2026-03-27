@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>{% block title %}Mon Portfolio{% endblock %}</title>
+    <meta name="description" content="Portfolio de Kouman Kouassi Yves — Développeur web full-stack basé à Abidjan, spécialisé en HTML, CSS, JavaScript, React et Flask.">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo_1.png') }}">
+    <title>{% block title %}Mon Portfolio{% endblock %} — Kouman Kouassi Yves</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     {% block extra_css %}{% endblock %}
 </head>
+
 <body>
-    <nav>
+    <nav aria-label="Navigation principale">
         <div class="logo" id="logo">
             <a href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='images/logo_1.png') }}" alt="KOUMAN K. YVES">
+                <img src="{{ url_for('static', filename='images/logo_1.png') }}" alt="KOUMAN KOUASSI YVES — Accueil">
             </a>
         </div>
-        
+
         <!-- Menu hamburger pour mobile -->
-        <div class="menu-toggle">
-            <span>d</span>
-            <span>f</span>
+        <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
             <span></span>
-        </div>
-        
-        <ul>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul id="nav-menu">
             <li><a href="{{ url_for('index') }}"><span>Accueil</span></a></li>
             <li><a href="{{ url_for('about') }}"><span>À propos</span></a></li>
             <li><a href="{{ url_for('project') }}"><span>Projets</span></a></li>
@@ -38,22 +42,23 @@
 
     <footer>
         <a href="{{ url_for('index') }}">
-            <img src="{{ url_for('static', filename='images/logo_1.png') }}" alt="KOUMAN K. YVES">
+            <img src="{{ url_for('static', filename='images/logo_1.png') }}" alt="KOUMAN KOUASSI YVES">
         </a>
 
         <div class="social-links">
-            <a href="https://wa.me/2250594601303" target="_blank">WhatsApp</a>
-            <a href="https://www.facebook.com/kouman.kouassi.yves" target="_blank">Facebook</a>
-            <a href="https://www.linkedin.com/in/kouman-kouassi-yves" target="_blank">LinkedIn</a>
-            <a href="https://github.com/kouman-kouassi-yves" target="_blank">GitHub</a>
+            <a href="https://wa.me/2250594601303" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://www.facebook.com/kouman.kouassi.yves" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.linkedin.com/in/kouman-kouassi-yves" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/kouman-kouassi-yves" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-        
+
         <div>
-            <p>&copy; 2026 KOUMAN KOUASSI YVES - Tous droits réservés</p>
+            <p>&copy; 2026 KOUMAN KOUASSI YVES — Tous droits réservés</p>
         </div>
     </footer>
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     {% block extra_js %}{% endblock %}
 </body>
+
 </html>
